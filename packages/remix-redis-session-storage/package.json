@@ -30,7 +30,7 @@
     "prepublishOnly": "npm run build && publint",
     "dev": "tsup --watch",
     "build": "tsup",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "devDependencies": {
     "@remix-run/cloudflare": "1.15.0",
