@@ -13,6 +13,10 @@
     "changeset:version": "changeset version && node ./scripts/remove-prerelease-changelogs.mjs",
     "changeset:release": "pnpm run build && changeset publish"
   },
+  "workspaces": [
+    "packages/*",
+    "examples"
+  ],
   "license": "MIT",
   "dependencies": {
     "@changesets/cli": "^2.26.1",
