@@ -1,6 +1,6 @@
 {
   "name": "remix-redis-session-storage",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "repository": "mcansh/remix-redis-session-storage",
   "license": "MIT",
