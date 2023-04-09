@@ -16,7 +16,7 @@ concurrency:
 jobs:
   release:
     name: 🦋 Changesets Release
-    if: github.repository == 'mcansh/remix-fastify'
+    if: github.repository == 'mcansh/remix-redis-session-storage'
     runs-on: ubuntu-latest
     outputs:
       published: ${{ steps.changesets.outputs.published }}
@@ -62,7 +62,7 @@ jobs:
 
   comment:
     name: 📝 Comment on issues and pull requests
-    if: github.repository == 'mcansh/remix-fastify' && needs.release.outputs.published == 'true'
+    if: github.repository == 'mcansh/remix-redis-session-storage' && needs.release.outputs.published == 'true'
     needs: [release]
     runs-on: ubuntu-latest
     steps:
