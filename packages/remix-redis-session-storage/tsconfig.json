@@ -1,0 +1,18 @@
+{
+  "exclude": ["__tests__"],
+  "include": ["src/*"],
+  "compilerOptions": {
+    "lib": ["ES2019", "DOM.Iterable", "DOM"],
+    "target": "ES2019",
+    "module": "ES2020",
+    "moduleResolution": "node",
+    "strict": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "resolveJsonModule": true
+  }
+}

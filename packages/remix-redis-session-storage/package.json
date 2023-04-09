@@ -1,0 +1,62 @@
+{
+  "name": "remix-redis-session-storage",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "mcansh/remix-redis-session-storage",
+  "license": "MIT",
+  "author": "Logan McAnsh <logan@mcan.sh> (https://mcan.sh)",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/node.d.ts",
+      "deno": "./dist/deno.mjs",
+      "worker": "./dist/cloudflare.mjs",
+      "require": "./dist/node.js",
+      "import": "./dist/node.mjs",
+      "default": "./dist/node.js"
+    }
+  },
+  "main": "./dist/node.js",
+  "module": "./dist/node.mjs",
+  "source": "./src/node.ts",
+  "types": "./dist/node.d.ts",
+  "files": [
+    "dist",
+    "package.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build && publint",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@remix-run/cloudflare": "1.15.0",
+    "@remix-run/deno": "1.15.0",
+    "@remix-run/node": "1.15.0",
+    "@remix-run/server-runtime": "1.15.0",
+    "@types/node": "^18.15.11",
+    "ioredis": "^5.3.1",
+    "typescript": "^5.0.3"
+  },
+  "peerDependencies": {
+    "@remix-run/cloudflare": "1.15.0",
+    "@remix-run/deno": "1.15.0",
+    "@remix-run/node": "1.15.0",
+    "@remix-run/server-runtime": "^1.15.0",
+    "ioredis": "^5.3.1"
+  },
+  "peerDependenciesMeta": {
+    "@remix-run/cloudflare": {
+      "optional": true
+    },
+    "@remix-run/deno": {
+      "optional": true
+    },
+    "@remix-run/node": {
+      "optional": true
+    }
+  }
+}
