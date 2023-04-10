@@ -18,10 +18,6 @@ export type CreateRedisSessionStorageFunction = <
   options: RedisSessionStorageOptions
 ) => SessionStorage<Data, FlashData>;
 
-function generateSessionId(): string {
-  return Math.random().toString(36).substring(2);
-}
-
 export const createRedisSessionStorageFactory =
   (
     createSessionStorage: CreateSessionStorageFunction
@@ -33,7 +29,7 @@ export const createRedisSessionStorageFactory =
     return createSessionStorage({
       cookie,
       async createData(data, expires) {
-        let id = generateSessionId();
+        let id = Math.random().toString(36).substring(2);
         await redis.set(id, JSON.stringify(data));
         if (expires) {
           await redis.expireat(id, Math.floor(expires.getTime() / 1000));
@@ -44,7 +40,11 @@ export const createRedisSessionStorageFactory =
       async readData(id) {
         let data = await redis.get(id);
         if (!data) return null;
-        return JSON.parse(data);
+        try {
+          return JSON.parse(data);
+        } catch {
+          return null;
+        }
       },
 
       async updateData(id, data, expires) {
