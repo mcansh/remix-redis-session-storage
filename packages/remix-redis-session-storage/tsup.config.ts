@@ -2,6 +2,8 @@ import { defineConfig } from "tsup";
 import type { Options } from "tsup";
 
 import pkgJSON from "./package.json";
+
+// @ts-expect-error
 let external = Object.keys(pkgJSON.dependencies || {});
 
 let shared_options: Options = {
@@ -10,7 +12,7 @@ let shared_options: Options = {
   tsconfig: "./tsconfig.json",
 };
 
-function node() {
+function node(): Array<Options> {
   return [
     {
       ...shared_options,
@@ -27,7 +29,7 @@ function node() {
   ];
 }
 
-function cloudflare() {
+function cloudflare(): Array<Options> {
   return [
     {
       ...shared_options,
@@ -38,7 +40,7 @@ function cloudflare() {
   ];
 }
 
-function deno() {
+function deno(): Array<Options> {
   return [
     {
       ...shared_options,
