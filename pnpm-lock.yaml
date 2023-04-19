@@ -101,12 +101,6 @@ importers:
 
   packages/remix-redis-session-storage:
     devDependencies:
-      '@remix-run/cloudflare':
-        specifier: 1.15.0
-        version: 1.15.0(@cloudflare/workers-types@3.19.0)
-      '@remix-run/deno':
-        specifier: 1.15.0
-        version: 1.15.0
       '@remix-run/node':
         specifier: 1.15.0
         version: 1.15.0
@@ -1564,16 +1558,6 @@ packages:
       prettier: 2.8.7
     dev: false
 
-  /@cloudflare/kv-asset-handler@0.1.3:
-    resolution: {integrity: sha512-FNcunDuTmEfQTLRLtA6zz+buIXUHj1soPvSWzzQFBC+n2lsy+CGf/NIrR3SEPCmsVNQj70/Jx2lViCpq+09YpQ==}
-    dependencies:
-      mime: 2.6.0
-    dev: true
-
-  /@cloudflare/workers-types@3.19.0:
-    resolution: {integrity: sha512-0FRcsz7Ea3jT+gc5gKPIYciykm1bbAaTpygdzpCwGt0RL+V83zWnYN30NWDW4rIHj/FHtz+MIuBKS61C8l7AzQ==}
-    dev: true
-
   /@emotion/hash@0.9.0:
     resolution: {integrity: sha512-14FtKiHhy2QoPIzdTcvh//8OyBlknNs2nXRwIhG904opCby3l+9Xaf/wuPvICBF0rc1ZCNBd3nKe9cd2mecVkQ==}
     dev: true
@@ -2365,25 +2349,6 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.5.0
-
-  /@remix-run/cloudflare@1.15.0(@cloudflare/workers-types@3.19.0):
-    resolution: {integrity: sha512-/ndqI+mJn162GPli7N5bL82xNfPlMIkhobwSs+CQgheghLFH+VQEVAvKYiTCluj+Y3LgBT8VPq99lSaVuLKjjg==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      '@cloudflare/workers-types': ^2.0.0 || ^3.0.0
-    dependencies:
-      '@cloudflare/kv-asset-handler': 0.1.3
-      '@cloudflare/workers-types': 3.19.0
-      '@remix-run/server-runtime': 1.15.0
-    dev: true
-
-  /@remix-run/deno@1.15.0:
-    resolution: {integrity: sha512-H+Yek8es06VDQuwgezxYsw8mQKDEo+zT3s/fCbqWHhRb/OfZxInXHGdSekt+omqsnhE+4xy6qxzWurfmVWPafw==}
-    engines: {node: '>=14'}
-    dependencies:
-      '@remix-run/server-runtime': 1.15.0
-      mime: 3.0.0
-    dev: true
 
   /@remix-run/dev@1.15.0(@remix-run/serve@1.15.0):
     resolution: {integrity: sha512-BsE1GN6WM9PhN+agZi4TqUIuYzoHYZrufEdXLg3ZEYxWXqvtRKUNfhsYSDlEhrW+D5fyVQhJrs61wQ83sEXHLQ==}
@@ -6991,18 +6956,6 @@ packages:
     resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
     engines: {node: '>=4'}
     hasBin: true
-
-  /mime@2.6.0:
-    resolution: {integrity: sha512-USPkMeET31rOMiarsBNIHZKLGgvKc/LrjofAnBlOttf5ajRvqiRA8QsenbcooctK6d6Ts6aqZXBA+XbkKthiQg==}
-    engines: {node: '>=4.0.0'}
-    hasBin: true
-    dev: true
-
-  /mime@3.0.0:
-    resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
-    engines: {node: '>=10.0.0'}
-    hasBin: true
-    dev: true
 
   /mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
