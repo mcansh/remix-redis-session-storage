@@ -8,18 +8,16 @@
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/node.d.ts",
-      "deno": "./dist/deno.mjs",
-      "worker": "./dist/cloudflare.mjs",
-      "require": "./dist/node.js",
-      "import": "./dist/node.mjs",
-      "default": "./dist/node.js"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.js"
     }
   },
-  "main": "./dist/node.js",
-  "module": "./dist/node.mjs",
-  "source": "./src/node.ts",
-  "types": "./dist/node.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist",
     "package.json",
@@ -33,8 +31,6 @@
     "test": "jest --passWithNoTests"
   },
   "devDependencies": {
-    "@remix-run/cloudflare": "1.15.0",
-    "@remix-run/deno": "1.15.0",
     "@remix-run/node": "1.15.0",
     "@remix-run/server-runtime": "1.15.0",
     "@types/node": "^18.15.11",
@@ -42,19 +38,11 @@
     "typescript": "^5.0.3"
   },
   "peerDependencies": {
-    "@remix-run/cloudflare": "1.15.0",
-    "@remix-run/deno": "1.15.0",
     "@remix-run/node": "1.15.0",
     "@remix-run/server-runtime": "^1.15.0",
     "ioredis": "^5.3.1"
   },
   "peerDependenciesMeta": {
-    "@remix-run/cloudflare": {
-      "optional": true
-    },
-    "@remix-run/deno": {
-      "optional": true
-    },
     "@remix-run/node": {
       "optional": true
     }
