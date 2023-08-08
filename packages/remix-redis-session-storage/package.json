@@ -5,19 +5,24 @@
   "repository": "mcansh/remix-redis-session-storage",
   "license": "MIT",
   "author": "Logan McAnsh <logan@mcan.sh> (https://mcan.sh)",
+  "type": "module",
   "exports": {
     "./package.json": "./package.json",
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.js"
+      "types": {
+        "require": "./dist/index.d.cts",
+        "import": "./dist/index.d.ts",
+        "default": "./dist/index.d.cts"
+      },
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "source": "./src/index.ts",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.cts",
   "files": [
     "dist",
     "package.json",
@@ -27,7 +32,7 @@
   "scripts": {
     "prepublishOnly": "npm run build && publint",
     "dev": "tsup --watch",
-    "build": "tsup",
+    "build": "tsup && publint",
     "test": "jest --passWithNoTests"
   },
   "devDependencies": {
