@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: web
+    runtime: node
+    repo: https://github.com/mcansh/remix-redis-session-storage.git
+    plan: free # optional (defaults to starter instance type)
+    region: ohio # optional (defaults to oregon)
+    rootDir: .
+    buildCommand: pnpm i && pnpm run build
+    startCommand: cd example && pnpm run start
+    envVars:
+      - key: REDIS_URL
+        fromService:
+          type: redis
+          name: redis
+          property: connectionString
+
+  - type: redis
+    name: redis
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
+    plan: free
+    maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
