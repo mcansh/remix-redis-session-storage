@@ -21,6 +21,7 @@ jobs:
       - name: 🟧 Setup pnpm
         uses: pnpm/action-setup@v2
         with:
+          dest: ~/.ci/setup-pnpm
           version: 8
           run_install: |
             - recursive: true
@@ -55,6 +56,7 @@ jobs:
       - name: 🟧 Setup pnpm
         uses: pnpm/action-setup@v2
         with:
+          dest: ~/.ci/setup-pnpm
           version: 7
 
       - name: ⎔ Setup node
